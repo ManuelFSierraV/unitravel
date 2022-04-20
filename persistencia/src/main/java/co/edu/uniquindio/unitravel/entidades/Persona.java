@@ -3,11 +3,13 @@ package co.edu.uniquindio.unitravel.entidades;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.io.Serializable;
 
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
+@ToString
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -16,10 +18,18 @@ import java.io.Serializable;
 public class Persona implements Serializable {
 
     @Id
-    @Column( length = 10)
+    @Column(length = 12)
     @EqualsAndHashCode.Include
     private String cedula;
 
-    @Column(nullable = false, length = 200)
-    private String nombreCompleto;
+    @Column(length = 25,nullable = false)
+    private String nombre;
+
+    @Column(length = 50,nullable = false,unique = true)
+    @Email
+    private String email;
+
+    @Column(length = 25,nullable = false)
+    private String password;
+
 }

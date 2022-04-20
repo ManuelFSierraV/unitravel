@@ -1,5 +1,6 @@
 package co.edu.uniquindio.unitravel;
 
+import co.edu.uniquindio.unitravel.entidades.Administrador;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
